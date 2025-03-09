@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  animation: bodyanimation 1s ease-in;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure the body takes the full height of the screen */
+}
+@keyframes bodyanimation {
+from {opacity: 0%;
+}
+to {opacity: 100%;
+}
+}
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 100vh;
+  margin-top: 20%;
+  margin-left: 42%;
+  background-image: url(Nimi.png);
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-position: center;
+  z-index: -1;
+  }
+
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 100%;
+  padding: 25px;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+}
+
+
+.container {
+  max-width: 96%;
+  width: 96%;
+}
+
+.slider-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.slider-wrapper .slide-button {
+  position: absolute;
+  top: 50%;
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  z-index: 5;
+  color: #000000;
+  display: flex;
+  cursor: pointer;
+  font-size: 2.2rem;
+  background: #ffffff;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.slider-wrapper .slide-button:hover {
+  background: hsla(182, 100%, 50%, 0.705);
+}
+
+.slider-wrapper .slide-button#prev-slide {
+  left: -25px;
+  display: none;
+}
+
+.slider-wrapper .slide-button#next-slide {
+  right: -25px;
+}
+
+.slider-wrapper .image-list {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 30px;
+  font-size: 0;
+  list-style: none;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.slider-wrapper .image-list::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-wrapper .image-list .image-item {
+  width: 750px;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.image-item:hover {
+  transform: scale(1.05);  /* Slight zoom effect */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.637);  /* Add a shadow when hovered */
+}
+
+
+.container .slider-scrollbar {
+  height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slider-scrollbar .scrollbar-track {
+  background: #ccc;
+  width: 100%;
+  height: 2px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  position: relative;
+}
+
+.slider-scrollbar:hover .scrollbar-track {
+  height: 4px;
+}
+
+.slider-scrollbar .scrollbar-thumb {
+  position: absolute;
+  background:hsl(0, 0%, 31%);
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+  cursor: grab;
+  border-radius: inherit;
+}
+
+.slider-scrollbar .scrollbar-thumb:active {
+  cursor: grabbing;
+  height: 8px;
+  top: -2px;
+}
+
+.slider-scrollbar .scrollbar-thumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  bottom: -10px;
+}
+
+/* Popup styles */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  z-index: 1000; /* Make sure it's above everything else */
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-img {
+  max-width: 100%;
+  max-height: 90%;
+  object-fit: contain; /* Keep the aspect ratio intact */
+  margin: 0 auto;
+}
+
+/* Pieni linkki kuvan päällä */
+.popup-link {
+  position: absolute;
+  top: 41%; /* Voit säätää sijaintia kuvan päällä */
+  left: 2%; /* Voit säätää sijaintia kuvan päällä */
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight:300;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.popup-link:hover {
+  background-color: rgba(112, 255, 243, 0.61); /* Lisää hover-efekti */
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Hover effects */
+.popup-img:hover {
+  cursor: pointer;
+}
+
+
+
+/* Styles for mobile and tablets */
+@media only screen and (max-width: 700px) {
+  #popup {
+    display: none !important; /* Piilotetaan popup kokonaan mobiililaitteilla */
+  }
+
+  #close-popup {
+    display: none !important; /* Piilotetaan myös sulkunappi */
+  }
+
+  .container {
+    max-width: 96%;
+    width: 96%;
+  }
+  header {
+    width: 100%;
+    margin: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: black;
+  }
+
+  .slider-wrapper .slide-button {
+    display: none !important; /* Piilotetaan napit */
+  }
+
+  .slider-wrapper .image-list {
+    gap: 10px;
+    margin-bottom: 15px;
+    scroll-snap-type: x mandatory; /* Varmistaa, että kuvat pysähtyvät */
+  }
+
+  .slider-wrapper .image-list .image-item {
+    width: 290px;
+    height: 80px;
+    object-fit: cover; /* Täyttää kuvat, mutta säilyttää mittasuhteet */
+  }
+
+  .slider-scrollbar .scrollbar-thumb {
+    width: 20%;
+  }
+}
