@@ -208,6 +208,7 @@ const navLinks = document.querySelector('.nav-links');
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
+
 const popup = document.querySelector('.popup');
 const popupImg = popup.querySelector('img');
 const closeBtn = popup.querySelector('.close-btn');
