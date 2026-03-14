@@ -209,30 +209,7 @@ menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-const popup = document.querySelector('.popup');
-const popupImg = popup.querySelector('img');
-const closeBtn = popup.querySelector('.close-btn');
-const popupText = popup.querySelector('.popup-text');
 
-const galleryImages = document.querySelectorAll('.gallery img');
-
-galleryImages.forEach((img, index) => {
-  img.addEventListener('click', () => {
-    popup.style.display = 'flex';
-    popupImg.src = img.src;
-
-    // Näytetään ja tehdään klikattavaksi vain ensimmäisen kuvan teksti
-    if(index === 0){
-      popupText.style.display = 'block';
-      popupText.onclick = () => {
-        window.location.href = "https://www.figma.com/proto/yDzcSrA4eXCumpD8D5pqfV/Presentation-merchant---customer?node-id=1027-2&p=f&t=uxmohfnwgdvqdD6b-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1108%3A80"; // korvaa haluamallasi linkillä
-      }
-    } else {
-      popupText.style.display = 'none';
-      popupText.onclick = null;
-    }
-  });
-});
 
 // Sulje popup kun klikataan close-nappia tai muuta kuin tekstiä
 closeBtn.addEventListener('click', () => popup.style.display = 'none');
