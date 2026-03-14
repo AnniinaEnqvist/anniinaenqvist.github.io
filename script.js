@@ -224,7 +224,7 @@ galleryImages.forEach((img, index) => {
     if(index === 0){
       popupText.style.display = 'block';
       popupText.onclick = () => {
-        window.location.href = "https://www.figma.com/proto/yDzcSrA4eXCumpD8D5pqfV/Presentation-merchant---customer?t=xlzQZf66BxtZQzkg-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&node-id=1108-80&starting-point-node-id=1108%3A80"; // korvaa haluamallasi linkillä
+        window.location.href = "https://www.figma.com/proto/yDzcSrA4eXCumpD8D5pqfV/Presentation-merchant---customer?node-id=1027-2&p=f&t=uxmohfnwgdvqdD6b-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1108%3A80"; // korvaa haluamallasi linkillä
       }
     } else {
       popupText.style.display = 'none';
