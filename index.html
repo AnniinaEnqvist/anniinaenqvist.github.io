@@ -21,25 +21,31 @@
 
 
 
-    <header>
-        <div>
-            <a class="logo">Anniina Enqvist</a>
-        </div>
-        <div>
-            <ul>
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-                <li>
-                    <a href="#portfolio">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
+<header>
+  <!-- Logo icon -->
+  <div class="header-left">
+    <img src="a.png" alt="Logo" class="logo-img" />
+   
+  </div>
 
-    </header>
+  <!-- Name text -->
+  <div class="logo-name">
+    Anniina Enqvist
+  </div>
+
+  <!-- Hamburger menu -->
+  <div class="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <!-- Navigation -->
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#other-works">Other works</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</header>
 
 
     <main>
@@ -106,8 +112,44 @@
         
       </div>
     </div>
-    
 
+
+
+    <!-- Popup for the large image -->
+<div id="popup" class="popup">
+  <span id="close-popup" class="close-btn">&times;</span>
+  <img id="popup-img" class="popup-img" src="" alt="Large view" />
+    <div class="popup-text">------------------</div>
+</div>
+
+    </section>
+
+
+
+
+
+   <!-- Other works Section -->
+<section class="other-works-section" id="other-works">
+   
+
+<div class="gallery">
+  <img src="images/1w.jpg" onclick="openPopup(this.src)">
+  <img src="images/2w.jpg" onclick="openPopup(this.src)">
+  <img src="images/3w.jpg" onclick="openPopup(this.src)">
+  <img src="images/4w.jpg" onclick="openPopup(this.src)">
+  <img src="images/5w.jpg" onclick="openPopup(this.src)">
+  <img src="images/6w.jpg" onclick="openPopup(this.src)">
+  <img src="images/7w.jpg" onclick="openPopup(this.src)">
+  <img src="images/8w.jpg" onclick="openPopup(this.src)">
+  <img src="images/9w.jpg" onclick="openPopup(this.src)">
+  <img src="images/10w.jpg" onclick="openPopup(this.src)">
+  <img src="images/11w.jpg" onclick="openPopup(this.src)">
+  <img src="images/12w.jpg" onclick="openPopup(this.src)">
+</div>
+
+
+
+<script src="script.js"></script>
 
 <!-- Popup for the large image -->
 <div id="popup" class="popup">
@@ -115,17 +157,9 @@
   <img id="popup-img" class="popup-img" src="" alt="Large view" />
 </div>
 
-   
 
+    </section>
 
-                
-
-       
-
-           
-
-            
-        </section>
 
 
 
@@ -177,4 +211,3 @@
 </body>
 
 </html>
-
