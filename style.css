@@ -510,11 +510,11 @@ section.portfolio-section {
 /* Teksti overlay popupissa */
 .popup-text {
   position: absolute;
-  bottom: 200px;
-  left: 50%;
+  bottom: 630px;
+  left: 34%;
   transform: translateX(-50%);
-  color: white;
-  background: rgba(0,0,0,0.5);
+  color: rgba(226, 24, 24, 0);
+  background: rgba(0, 0, 0, 0);
   padding: 10px 20px;
   font-size: 1.2rem;
   cursor: pointer;
