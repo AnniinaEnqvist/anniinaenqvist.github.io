@@ -6,17 +6,14 @@
   --primary-hover: #7a7a7a;
   --dark-primary: black;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   font-family: "Poppins", sans-serif;
   animation: bodyanimation 1s ease-in;
@@ -27,9 +24,6 @@ body {
     to {opacity: 100%;
     }
   }
-  
-  
-
 header {
   display: flex;
   justify-content: space-between; /* Logo+Name on left, Hamburger on right */
@@ -42,14 +36,12 @@ header {
   z-index: 999;
   background-color: transparent; /* make header transparent */
 }
-
 /* Logo icon */
 header .logo-icon i {
   font-size: 1.0rem;
   color: white;
   margin-right: 10px;
 }
-
 /* Name text */
 header .logo-name {
   font-size: 1.0rem;
@@ -58,33 +50,26 @@ header .logo-name {
   color: white;
   margin-right: 350px;
 }
-
 /* Navigation */
 header ul.nav-links {
   display: flex;
   list-style: none;
   gap: 30px;
 }
-
 header ul.nav-links li a {
   color: white;
   text-decoration: none;
   font-weight: 600;
 }
-
 header ul.nav-links li a:hover {
   color: #ff0000;
 }
-
 /* Hamburger menu */
 .menu-toggle {
   display: none; /* show only on mobile */
   cursor: pointer;
   font-size: 1.8rem;
- 
-}
-
-
+ }
 /* Hero Section */
 section{
     width: 100%;
@@ -143,7 +128,6 @@ section{
     font-size: clamp(0.4rem , 0.2rem + 9vw, 1rem);
     margin: 10px 0;
 }
-
 .social-links i{
     display: inline-flex;
     justify-content: center;
@@ -162,7 +146,7 @@ section{
     scale: 1.3;
     color: black;
     background-color: #ffffff;
- }
+}
 .content button{
     width: 50%;
     height: 6vh;
@@ -182,11 +166,7 @@ section{
     border: 2px solid #7a7a7a;
     background-color: transparent;
     font-weight: 700;
-    box-shadow: 0 0 40px #7a7a7a;
-}
-
-
-
+  }
 section.hero-section {
   background-color: var(--dark-primary);
   color: #fff;
@@ -237,9 +217,6 @@ ul.social-icons {
   text-decoration: none;
   color: #fff;
 }
-
-
-
 /* buttons */
 .btn {
   padding: 10px 20px;
@@ -273,6 +250,19 @@ ul.social-icons {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Portfolio Section */
 section.portfolio-section {
   width: 100%;
@@ -287,17 +277,14 @@ section.portfolio-section {
 .portfolio-section h2 > span {
   color: var(--primary);
 }
-
 .container {
  width: 100%;
 }
-
 .slider-wrapper {
   width: 100%;
   position: relative;
-  padding-top: 30px;
+  padding-top: 20px;
 }
-
 .slider-wrapper .slide-button {
   position: absolute;
   top: 57%;
@@ -316,20 +303,16 @@ section.portfolio-section {
   border-radius: 50%;
   transform: translateY(-50%);
 }
-
 .slider-wrapper .slide-button:hover {
   background: rgba(255, 255, 255, 0.425);
 }
-
 .slider-wrapper .slide-button#prev-slide {
   left: -25px;
   display: none;
 }
-
 .slider-wrapper .slide-button#next-slide {
   right: -25px;
 }
-
 .slider-wrapper .image-list {
   display: grid;
   grid-template-columns: repeat(23, 1fr);
@@ -340,11 +323,9 @@ section.portfolio-section {
   overflow-x: auto;
   scrollbar-width: none;
 }
-
 .slider-wrapper .image-list::-webkit-scrollbar {
   display: none;
 }
-
 .slider-wrapper .image-list .image-item {
   width: 750px;
   height: 100%;
@@ -353,16 +334,14 @@ section.portfolio-section {
 }
 .image-item:hover {
   transform: scale(1.05);  /* Slight zoom effect */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.637);  /* Add a shadow when hovered */
 }
-
-
 .container .slider-scrollbar {
   height: 24px;
   width: 100%;
   display: flex;
   align-items: center;
 }
-
 .slider-scrollbar .scrollbar-track {
   background: #ccc;
   width: 100%;
@@ -372,11 +351,9 @@ section.portfolio-section {
   border-radius: 4px;
   position: relative;
 }
-
 .slider-scrollbar:hover .scrollbar-track {
   height: 4px;
 }
-
 .slider-scrollbar .scrollbar-thumb {
   position: absolute;
   background: #3b3b3b;
@@ -387,13 +364,11 @@ section.portfolio-section {
   cursor: grab;
   border-radius: inherit;
 }
-
 .slider-scrollbar .scrollbar-thumb:active {
   cursor: grabbing;
   height: 8px;
   top: -2px;
 }
-
 .slider-scrollbar .scrollbar-thumb::after {
   content: "";
   position: absolute;
@@ -402,7 +377,6 @@ section.portfolio-section {
   top: -10px;
   bottom: -10px;
 }
-
 /* Popup styles */
 .popup {
   display: none; /* Hidden by default */
@@ -416,14 +390,12 @@ section.portfolio-section {
   justify-content: center;
   align-items: center;
 }
-
 .popup-img {
   max-width: 100%;
   max-height: 90%;
   object-fit: contain; /* Keep the aspect ratio intact */
   margin: 0 auto;
 }
-
 .close-btn {
   position: absolute;
   top: 20px;
@@ -441,49 +413,45 @@ section.portfolio-section {
 
 
 
-
-/* Styles for mobile and tablets */
-@media only screen and (max-width: 700px) {
-  #popup {
-    display: none !important; /* Piilotetaan popup kokonaan mobiililaitteilla */
-  }
-
-  #close-popup {
-    display: none !important; /* Piilotetaan myös sulkunappi */
-  }
-
-  .container {
-    max-width: 96%;
-    width: 96%;
-  }
-  header {
-    width: 100%;
-    margin: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: black;
-  }
-
-  .slider-wrapper .slide-button {
-    display: none !important; /* Piilotetaan napit */
-  }
-
-  .slider-wrapper .image-list {
-    gap: 10px;
-    margin-bottom: 15px;
-    scroll-snap-type: x mandatory; /* Varmistaa, että kuvat pysähtyvät */
-  }
-
-  .slider-wrapper .image-list .image-item {
-    width: 290px;
-    height: 80px;
-    object-fit: cover; /* Täyttää kuvat, mutta säilyttää mittasuhteet */
-  }
-
-  .slider-scrollbar .scrollbar-thumb {
-    width: 20%;
-  }
+.other-works-section .image-list li {
+  overflow: hidden;
 }
+
+.other-works-section .image-list li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* pitää kuvan mittasuhteet mutta täyttää ruudun */
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.other-works-section .image-list li img:hover {
+  transform: scale(1.05); /* pieni zoom efekt hoverissa */
+}
+
+/* Keskitetään galleria vaakasuunnassa */
+.other-works-section .container {
+  display: flex;
+  justify-content: center; /* vaakakeskus */
+  /* align-items ei tarvita vain vaakakeskitykseen */
+  padding: 130px;
+}
+
+/* 5x5 grid galleria säilyy ennallaan */
+.other-works-section .image-list {
+  display: grid;
+  grid-template-columns: repeat(5, 200px); /* 5 saraketta */
+  grid-template-rows: repeat(5, 80px);    /* 5 riviä */
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+  /* lisää tämä varmistaaksesi, että grid ei täytä koko containeria */
+  width: max-content;
+}
+
+
+
 
 
 
@@ -503,7 +471,6 @@ section.contact-section {
   padding: 180px;
   background-image: url(d.jpg);
 }
-
 .contact-section h2 {
   font-size: 28px;
   margin: 10px 0;
@@ -544,6 +511,44 @@ textarea:focus {
 
 
 
+
+/* Styles for mobile and tablets */
+@media only screen and (max-width: 700px) {
+  #popup {
+    display: none !important; /* Piilotetaan popup kokonaan mobiililaitteilla */
+  }
+  #close-popup {
+    display: none !important; /* Piilotetaan myös sulkunappi */
+  }
+  .container {
+    max-width: 96%;
+    width: 96%;
+  }
+  header {
+    width: 100%;
+    margin: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: black;
+  }
+  .slider-wrapper .slide-button {
+    display: none !important; /* Piilotetaan napit */
+  }
+  .slider-wrapper .image-list {
+    gap: 10px;
+    margin-bottom: 15px;
+    scroll-snap-type: x mandatory; /* Varmistaa, että kuvat pysähtyvät */
+  }
+  .slider-wrapper .image-list .image-item {
+    width: 290px;
+    height: 80px;
+    object-fit: cover; /* Täyttää kuvat, mutta säilyttää mittasuhteet */
+  }
+  .slider-scrollbar .scrollbar-thumb {
+    width: 20%;
+  }
+}
+
 /* Media queries */
 @media only screen and (max-width: 700px) {
   
@@ -551,7 +556,6 @@ textarea:focus {
   html, body {
     font-size: 14px;
   }
-
   /* Header */
   header {
     flex-direction: column;
@@ -580,7 +584,6 @@ textarea:focus {
   header ul li {
     margin: 5px 0;
   }
-
   /* Hamburger menu */
   .menu-toggle {
     display: block;
@@ -591,7 +594,6 @@ textarea:focus {
     right: 20px;
     top: 20px;
   }
-
   /* Hero Section */
   section.hero-section {
     flex-direction: column;
@@ -600,7 +602,6 @@ textarea:focus {
     background-size: cover;
     background-position: center;
   }
-
   .main-container {
     flex-direction: column;
     align-items: center;
@@ -642,7 +643,6 @@ textarea:focus {
     font-size: 1.2rem;
     margin: 15px 10px;
   }
-
   /* Portfolio Section */
   section.portfolio-section {
     height: auto;
@@ -655,7 +655,6 @@ textarea:focus {
   .portfolio-section h2 span {
     color: var(--primary);
   }
-
   .slider-wrapper {
     flex-direction: column;
     position: relative;
@@ -679,7 +678,6 @@ textarea:focus {
   .slider-scrollbar {
     display: none; /* Piilotetaan scrollbar mobiilissa */
   }
-
   /* Popup */
   #popup,
   #close-popup {
