@@ -514,12 +514,7 @@ textarea:focus {
 
 /* Styles for mobile and tablets */
 @media only screen and (max-width: 700px) {
-  #popup {
-    display: none !important; /* Piilotetaan popup kokonaan mobiililaitteilla */
-  }
-  #close-popup {
-    display: none !important; /* Piilotetaan myös sulkunappi */
-  }
+
   .container {
     max-width: 96%;
     width: 96%;
