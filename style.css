@@ -657,9 +657,6 @@ textarea:focus {
     display: none !important; /* Piilotetaan napit */
   }
 
-
-
-
 /* Keskitetään galleria vaakasuunnassa */
 .other-works-section .container {
   width: 60%;
@@ -668,16 +665,25 @@ textarea:focus {
   /* align-items ei tarvita vain vaakakeskitykseen */
   padding: 130px;
 }
-    .other-works-section .image-list {
-    grid-template-columns: repeat(2, 1fr); /* 2 saraketta mobiilissa */
-    grid-template-rows: auto;              /* automaattinen rivikorkeus */
-    gap: 10px;                             /* pienempi väli */
+
+  .other-works-section .image-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 saraketta */
+    grid-template-rows: auto;              /* automaattinen korkeus */
+    gap: 10px;                             /* pienempi rako */
     width: 100%;                            /* täytä container */
   }
-    .other-works-section .image-list li img {
-    width: 100%;
+  .other-works-section .image-list li {
+    width: 100%;    /* li-elementti täyttää solun */
     height: auto;
   }
+  .other-works-section .image-list li img {
+    width: 100%;    /* kuva skaalautuu solun mukaan */
+    height: auto;
+    object-fit: cover;
+  }
+
+
+
 
 
 
