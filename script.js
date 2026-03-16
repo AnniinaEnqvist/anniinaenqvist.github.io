@@ -177,4 +177,4 @@ popup.addEventListener('click', (e) => {
 });
 
 // Sulkee popup, jos klikataan itse kuvaa
-popupImg.addEventListener('click', () => popup.style.display = 'none');z
+popupImg.addEventListener('click', () => popup.style.display = 'none');
