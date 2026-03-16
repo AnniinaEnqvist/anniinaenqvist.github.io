@@ -663,7 +663,7 @@ textarea:focus {
     grid-template-columns: repeat(2, 1fr); /* 2 saraketta mobiilissa */
     grid-template-rows: auto;              /* rivikorkeus automaattinen */
     gap: 10px;                             /* pienempi rako */
-    width: 100%;                            /* täyttää containerin */
+    width: 50%;                            /* täyttää containerin */
   }
   .other-works-section .image-list li {
     width: 100%;
