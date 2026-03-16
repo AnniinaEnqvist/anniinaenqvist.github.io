@@ -668,7 +668,18 @@ textarea:focus {
   /* align-items ei tarvita vain vaakakeskitykseen */
   padding: 130px;
 }
-  
+    .other-works-section .image-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 saraketta mobiilissa */
+    grid-template-rows: auto;              /* automaattinen rivikorkeus */
+    gap: 10px;                             /* pienempi väli */
+    width: 100%;                            /* täytä container */
+  }
+    .other-works-section .image-list li img {
+    width: 100%;
+    height: auto;
+  }
+
+
 
 
 
