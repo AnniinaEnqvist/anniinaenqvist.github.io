@@ -529,7 +529,7 @@ textarea:focus {
     margin: 10px;
     flex-direction: column;
     align-items: flex-start;
-background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
   .slider-wrapper .slide-button {
     display: none !important; /* Piilotetaan napit */
