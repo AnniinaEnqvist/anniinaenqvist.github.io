@@ -406,8 +406,23 @@ section.portfolio-section {
   background: none;
   border: none;
 }
+.popup-image-container {
+  position: relative;
+  display: inline-block;
+}
 
-
+#gallery-popup-link {
+  position: absolute;
+  bottom: 340px;   /* Siirretään 50px ylöspäin kuvasta */
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.521);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  display: none;
+  margin-left: 20px;
+}
 
 
 
@@ -449,12 +464,6 @@ section.portfolio-section {
   /* lisää tämä varmistaaksesi, että grid ei täytä koko containeria */
   width: max-content;
 }
-
-
-
-
-
-
 
 
 
@@ -510,6 +519,15 @@ textarea:focus {
 
 
 
+
+
+
+
+
+
+
+
+
 /* Media queries */
 @media only screen and (max-width: 700px) {
   
@@ -550,14 +568,7 @@ textarea:focus {
    display: none; /* Piilottaa hamburgerin mobiilissa */
   }
 
-
-
-
-
-
-
-
-    
+  
   /* Hamburger menu */
   .menu-toggle {
     display: block;
@@ -565,7 +576,6 @@ textarea:focus {
     color: white;
     cursor: pointer;
     position: absolute;
-    right: 20px;
     top: 20px;
   }
   /* Hero Section */
@@ -660,11 +670,6 @@ textarea:focus {
   .slider-wrapper .slide-button {
     display: none !important; /* Piilotetaan napit */
   }
-
-
-
-
-
 
 
 

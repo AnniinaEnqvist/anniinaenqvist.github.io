@@ -1,3 +1,6 @@
+// ==============================
+// TYPEWRITER EFFECT
+// ==============================
 const texts = [
     "an INDUSTRIAL DESIGNER",
     "a PRODUCT DEVELOPER",
@@ -33,6 +36,7 @@ function eraseText() {
 
 window.onload = typeWriter;
 
+
 // ==============================
 // HAMBURGER MENU
 // ==============================
@@ -43,138 +47,203 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+
 // ==============================
-// SLIDER + POPUP
+// DOM LOADED (SLIDER + POPUPS)
 // ==============================
 document.addEventListener("DOMContentLoaded", function () {
 
-    const slider = document.querySelector(".image-list");
+    // ==============================
+    // SLIDER
+    // ==============================
+    const slider = document.querySelector(".slider-wrapper .image-list");
     const prevButton = document.getElementById("prev-slide");
     const nextButton = document.getElementById("next-slide");
 
-    const popup = document.getElementById("popup");
-    const popupImg = document.getElementById("popup-img");
-    const closePopup = document.getElementById("close-popup");
-
     const scrollStep = 200;
 
-    // HIIREN RULLAUS SLIDERILLE
-    slider.addEventListener("wheel", function (event) {
-        event.preventDefault();
-        if (event.deltaY > 0) {
-            slider.scrollLeft += scrollStep;
-        } else {
-            slider.scrollLeft -= scrollStep;
+    if (slider) {
+
+        slider.addEventListener("wheel", function (event) {
+            event.preventDefault();
+
+            if (event.deltaY > 0) {
+                slider.scrollLeft += scrollStep;
+            } else {
+                slider.scrollLeft -= scrollStep;
+            }
+        });
+
+        prevButton.addEventListener("click", () => slider.scrollLeft -= scrollStep);
+        nextButton.addEventListener("click", () => slider.scrollLeft += scrollStep);
+    }
+
+
+    // ==============================
+    // SLIDER POPUP
+    // ==============================
+    const sliderPopup = document.getElementById("slider-popup");
+    const sliderPopupImg = document.getElementById("slider-popup-img");
+    const closeSliderPopup = document.getElementById("close-slider-popup");
+
+    const sliderImages = document.querySelectorAll(".slider-wrapper .image-item");
+
+    sliderImages.forEach(img => {
+        img.addEventListener("click", () => {
+            sliderPopupImg.src = img.src;
+            sliderPopup.style.display = "flex";
+        });
+    });
+
+    closeSliderPopup.addEventListener("click", () => {
+        sliderPopup.style.display = "none";
+    });
+
+    sliderPopup.addEventListener("click", (e) => {
+        if (e.target === sliderPopup) {
+            sliderPopup.style.display = "none";
         }
     });
 
-    // SLIDER NAPIT
-    prevButton.addEventListener("click", () => slider.scrollLeft -= scrollStep);
-    nextButton.addEventListener("click", () => slider.scrollLeft += scrollStep);
-
-    // POPUP SLIDER-KUVILLE
-    const sliderImages = document.querySelectorAll(".image-item");
-    sliderImages.forEach(img => {
-        img.addEventListener("click", () => {
-            popupImg.src = img.src;
-            popup.style.display = "flex";
-        });
+    sliderPopupImg.addEventListener("click", () => {
+        sliderPopup.style.display = "none";
     });
 
-    // POPUP OTHER WORKS -GALLERIALLE
-    const galleryImages = document.querySelectorAll('.other-works-section .thumb');
+
+    // ==============================
+    // GALLERY POPUP
+    // ==============================
+    const galleryPopup = document.getElementById("gallery-popup");
+    const galleryPopupImg = document.getElementById("gallery-popup-img");
+    const closeGalleryPopup = document.getElementById("close-gallery-popup");
+
+    const galleryImages = document.querySelectorAll(".other-works-section .thumb");
+
     galleryImages.forEach(img => {
-        img.addEventListener('click', () => {
-            popupImg.src = img.src;
-            popup.style.display = 'flex';
+        img.addEventListener("click", () => {
+
+            galleryPopupImg.src = img.src;
+
+            const caption = galleryPopup.querySelector(".gallery-caption");
+            if (caption) {
+                caption.textContent = img.alt;
+            }
+
+            galleryPopup.style.display = "flex";
         });
     });
 
-    // POPUP SULKEUTUMINEN
-    closePopup.addEventListener('click', () => popup.style.display = 'none');
-    popup.addEventListener('click', (e) => {
-        if (e.target === popup) popup.style.display = 'none';
+    closeGalleryPopup.addEventListener("click", () => {
+        galleryPopup.style.display = "none";
+    });
+
+    galleryPopup.addEventListener("click", (e) => {
+        if (e.target === galleryPopup) {
+            galleryPopup.style.display = "none";
+        }
+    });
+
+    galleryPopupImg.addEventListener("click", () => {
+        galleryPopup.style.display = "none";
+    });
+    const galleryPopupLink = document.getElementById("gallery-popup-link");
+
+galleryImages.forEach((img, index) => {
+    img.addEventListener("click", () => {
+        galleryPopupImg.src = img.src;
+
+        const caption = galleryPopup.querySelector(".gallery-caption");
+        if (caption) {
+            caption.textContent = img.alt;
+        }
+
+        // Näytetään linkki vain ensimmäiselle kuvalle
+        if(index === 0){
+            galleryPopupLink.style.display = "block";
+            galleryPopupLink.href = "https://www.figma.com/proto/yDzcSrA4eXCumpD8D5pqfV/Presentation-merchant---customer?t=1cFdldhhkeRU1N3T-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&node-id=1108-80&starting-point-node-id=1108%3A80"; // haluamasi URL
+        } else {
+            galleryPopupLink.style.display = "none";
+        }
+
+        galleryPopup.style.display = "flex";
     });
 });
 
+});
+
+
+
+
+
+
+
+
 // ==============================
-// SLIDER SCROLLBAR SYSTEM
+// SLIDER SCROLLBAR
 // ==============================
 const initSlider = () => {
+
     const imageList = document.querySelector(".slider-wrapper .image-list");
     const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
-    const sliderScrollbar = document.querySelector(".container .slider-scrollbar");
-    if (!sliderScrollbar) return; // jos ei ole slider-scrollbar
+    const sliderScrollbar = document.querySelector(".slider-scrollbar");
+
+    if (!imageList || !sliderScrollbar) return;
+
     const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
 
     const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
 
-    // SCROLLBAR DRAG
     scrollbarThumb.addEventListener("mousedown", (e) => {
+
         const startX = e.clientX;
         const thumbPosition = scrollbarThumb.offsetLeft;
-        const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
+
+        const maxThumbPosition =
+            sliderScrollbar.getBoundingClientRect().width -
+            scrollbarThumb.offsetWidth;
 
         const handleMouseMove = (e) => {
+
             const deltaX = e.clientX - startX;
+
             const newThumbPosition = thumbPosition + deltaX;
-            const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
-            const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
+
+            const boundedPosition =
+                Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+
+            const scrollPosition =
+                (boundedPosition / maxThumbPosition) * maxScrollLeft;
+
             scrollbarThumb.style.left = `${boundedPosition}px`;
             imageList.scrollLeft = scrollPosition;
-        }
+        };
 
         const handleMouseUp = () => {
             document.removeEventListener("mousemove", handleMouseMove);
             document.removeEventListener("mouseup", handleMouseUp);
-        }
+        };
 
         document.addEventListener("mousemove", handleMouseMove);
         document.addEventListener("mouseup", handleMouseUp);
     });
 
-    // SLIDE BUTTONS
     slideButtons.forEach(button => {
+
         button.addEventListener("click", () => {
+
             const direction = button.id === "prev-slide" ? -1 : 1;
+
             const scrollAmount = 1360;
-            imageList.scrollBy({ left: scrollAmount * direction, behavior: "smooth" });
+
+            imageList.scrollBy({
+                left: scrollAmount * direction,
+                behavior: "smooth"
+            });
         });
+
     });
 
-    const handleSlideButtons = () => {
-        slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
-        slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
-    }
+};
 
-    const updateScrollThumbPosition = () => {
-        const scrollPosition = imageList.scrollLeft;
-        const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
-        scrollbarThumb.style.left = `${thumbPosition}px`;
-    }
-
-    imageList.addEventListener("scroll", () => {
-        updateScrollThumbPosition();
-        handleSlideButtons();
-    });
-}
-
-// INIT SLIDER
-window.addEventListener("resize", initSlider);
 window.addEventListener("load", initSlider);
-// ==============================
-// POPUP SULKEUTUMINEN
-// ==============================
-const popup = document.getElementById('popup');
-const popupImg = document.getElementById('popup-img');
-const closePopup = document.getElementById('close-popup');
-
-popupImg.addEventListener('click', () => popup.style.display = 'none');
-
-// Sulkee popup, jos klikataan taustaa
-popup.addEventListener('click', (e) => {
-    if (e.target === popup) popup.style.display = 'none';
-});
-
-// Sulkee popup, jos klikataan itse kuvaa
-popupImg.addEventListener('click', () => popup.style.display = 'none');
+window.addEventListener("resize", initSlider);
