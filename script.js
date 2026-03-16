@@ -169,7 +169,7 @@ const popup = document.getElementById('popup');
 const popupImg = document.getElementById('popup-img');
 const closePopup = document.getElementById('close-popup');
 
-closePopup.addEventListener('click', () => popup.style.display = 'none');
+popupImg.addEventListener('click', () => popup.style.display = 'none');
 
 // Sulkee popup, jos klikataan taustaa
 popup.addEventListener('click', (e) => {
