@@ -571,7 +571,7 @@ textarea:focus {
   .menu-toggle {
     display: none; /* Piilottaa hamburgerin mobiilissa */
     font-size: 1.8rem;
-    color: white;
+    color: rgba(255, 255, 255, 0);
     cursor: pointer;
     position: absolute;
     top: 20px;
@@ -661,16 +661,27 @@ textarea:focus {
     display: none; /* Piilotetaan scrollbar mobiilissa */
   }
 
-  .container {
-    max-width: 96%;
-    width: 96%;
-  }
   .slider-wrapper .slide-button {
     display: none !important; /* Piilotetaan napit */
   }
 
 
+  .container {
+    max-width: 96%;
+    width: 96%;
+  }
 
+
+
+
+/* Keskitetään galleria vaakasuunnassa */
+.other-works-section .container {
+  display: flex;
+  justify-content: center; /* vaakakeskus */
+  /* align-items ei tarvita vain vaakakeskitykseen */
+  padding: 130px;
+}
+  
 
 
 
