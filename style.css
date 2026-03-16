@@ -546,16 +546,7 @@ textarea:focus {
   header ul li {
     margin: 5px 0;
   }
-  /* Hamburger menu */
-  .menu-toggle {
-    display: block;
-    font-size: 1.8rem;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
+
   /* Hero Section */
   section.hero-section {
     flex-direction: column;
