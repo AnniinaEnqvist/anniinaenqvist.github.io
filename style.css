@@ -672,11 +672,6 @@ textarea:focus {
   .slider-scrollbar {
     display: none; /* Piilotetaan scrollbar mobiilissa */
   }
-  /* Popup */
-  #popup,
-  #close-popup {
-    display: none !important; /* Ei popupia mobiilissa */
-  }
 
   /* Contact Section */
   section.contact-section {
