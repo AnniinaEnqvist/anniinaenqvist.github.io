@@ -673,6 +673,7 @@ textarea:focus {
 
 /* Keskitetään galleria vaakasuunnassa */
 .other-works-section .container {
+  width: 60%;
   display: flex;
   justify-content: center; /* vaakakeskus */
   /* align-items ei tarvita vain vaakakeskitykseen */
