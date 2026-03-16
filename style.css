@@ -64,12 +64,7 @@ header ul.nav-links li a {
 header ul.nav-links li a:hover {
   color: #ff0000;
 }
-/* Hamburger menu */
-.menu-toggle {
-  display: none; /* show only on mobile */
-  cursor: pointer;
-  font-size: 1.8rem;
- }
+
 /* Hero Section */
 section{
     width: 100%;
@@ -565,17 +560,9 @@ textarea:focus {
     margin: 5px 0;
   }
 
-
   
-  /* Hamburger menu */
-  .menu-toggle {
-    display: none; /* Piilottaa hamburgerin mobiilissa */
-    font-size: 1.8rem;
-    color: rgba(255, 255, 255, 0);
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-  }
+  
+
   /* Hero Section */
   section.hero-section {
     flex-direction: column;
@@ -625,6 +612,10 @@ textarea:focus {
     font-size: 1.2rem;
     margin: 15px 10px;
   }
+
+
+
+
   /* Portfolio Section */
   section.portfolio-section {
     height: auto;
@@ -661,12 +652,10 @@ textarea:focus {
     display: none; /* Piilotetaan scrollbar mobiilissa */
   }
 
+
   .slider-wrapper .slide-button {
     display: none !important; /* Piilotetaan napit */
   }
-
-
-
 
 
 
@@ -680,6 +669,7 @@ textarea:focus {
   padding: 130px;
 }
   
+
 
 
 
