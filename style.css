@@ -609,7 +609,7 @@ textarea:focus {
     animation: none; /* Poistetaan hover-animaatio mobiilissa */
   }
   .main-container .image img {
-    width: 80%;
+    width: 100%;
     height: auto;
   }
   .main-container .content {
