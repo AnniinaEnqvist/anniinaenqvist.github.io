@@ -564,14 +564,12 @@ textarea:focus {
   header ul li {
     margin: 5px 0;
   }
-  .menu-toggle {
-   display: none; /* Piilottaa hamburgerin mobiilissa */
-  }
+
 
   
   /* Hamburger menu */
   .menu-toggle {
-    display: block;
+    display: none; /* Piilottaa hamburgerin mobiilissa */
     font-size: 1.8rem;
     color: white;
     cursor: pointer;
