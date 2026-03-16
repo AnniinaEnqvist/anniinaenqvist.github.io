@@ -510,40 +510,6 @@ textarea:focus {
 
 
 
-
-
-/* Styles for mobile and tablets */
-@media only screen and (max-width: 700px) {
-
-  .container {
-    max-width: 96%;
-    width: 96%;
-  }
-  header {
-    width: 100%;
-    margin: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: transparent;
-  }
-  .slider-wrapper .slide-button {
-    display: none !important; /* Piilotetaan napit */
-  }
-  .slider-wrapper .image-list {
-    gap: 10px;
-    margin-bottom: 15px;
-    scroll-snap-type: x mandatory; /* Varmistaa, että kuvat pysähtyvät */
-  }
-  .slider-wrapper .image-list .image-item {
-    width: 290px;
-    height: 80px;
-    object-fit: cover; /* Täyttää kuvat, mutta säilyttää mittasuhteet */
-  }
-  .slider-scrollbar .scrollbar-thumb {
-    width: 20%;
-  }
-}
-
 /* Media queries */
 @media only screen and (max-width: 700px) {
   
@@ -553,12 +519,14 @@ textarea:focus {
   }
   /* Header */
   header {
+    margin: 10px;
+    align-items: flex-start;
+    background-color: transparent;
+    width: 100%;
     flex-direction: column;
-    align-items: center;
     padding: 15px;
     position: fixed;
     top: 0;
-    width: 100%;
     z-index: 999;
   }
   header .logo {
@@ -672,6 +640,24 @@ textarea:focus {
   .slider-scrollbar {
     display: none; /* Piilotetaan scrollbar mobiilissa */
   }
+
+  .container {
+    max-width: 96%;
+    width: 96%;
+  }
+  .slider-wrapper .slide-button {
+    display: none !important; /* Piilotetaan napit */
+  }
+
+
+
+
+
+
+
+
+
+
 
   /* Contact Section */
   section.contact-section {
