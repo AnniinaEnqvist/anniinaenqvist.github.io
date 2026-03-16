@@ -512,56 +512,64 @@ textarea:focus {
 
 /* Media queries */
 @media only screen and (max-width: 700px) {
-      .menu-toggle {
-        display: none; /* Piilottaa hamburgerin mobiilissa */
-          /* Hamburger menu */
+  
   .menu-toggle {
-    display: block;
-    font-size: 1.8rem;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    }
-        
+   display: none; /* Piilottaa hamburgerin mobiilissa */
+  }
+   
+ 
+
   /* Body & html */
   html, body {
     font-size: 14px;
   }
+
   /* Header */
   header {
-    margin: 10px;
-    align-items: flex-start;
-    background-color: transparent;
-    width: 100%;
     flex-direction: column;
-    padding: 15px;
+    align-items: center;
+    padding: 15px 10px;
+    background-color: black;
     position: fixed;
     top: 0;
+    width: 100%;
     z-index: 999;
   }
-  header .logo {
-    margin-bottom: 15px;
+  header .logo-name {
+    margin: 0;
     font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-align: center;
   }
-  header ul {
+  header ul.nav-links {
     display: none;
     flex-direction: column;
     gap: 10px;
     width: 100%;
     text-align: center;
   }
-  header ul.active {
+  header ul.nav-links.active {
     display: flex;
   }
-  header ul li {
+  header ul.nav-links li {
     margin: 5px 0;
+  }
+
+  /* Hamburger menu */
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
   }
 
   /* Hero Section */
   section.hero-section {
     flex-direction: column;
-    padding: 80px 20px 40px 20px;
+    padding: 80px 15px 40px 15px;
     height: auto;
     background-size: cover;
     background-position: center;
@@ -570,12 +578,11 @@ textarea:focus {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    width: 100%;
   }
   .main-container .image {
     width: 270px;
     height: auto;
-    padding-bottom: 10px;
     animation: none; /* Poistetaan hover-animaatio mobiilissa */
   }
   .main-container .image img {
@@ -607,10 +614,11 @@ textarea:focus {
     font-size: 1.2rem;
     margin: 15px 10px;
   }
+
   /* Portfolio Section */
   section.portfolio-section {
     height: auto;
-    padding: 100px 15px;
+    padding: 100px 10px;
   }
   .portfolio-section h2 {
     font-size: 22px;
@@ -625,8 +633,10 @@ textarea:focus {
     width: 100%;
   }
   .slider-wrapper .slide-button {
-    display: none; /* Piilotetaan napit mobiilissa */
+    display: none; /* piilotetaan napit mobiilissa */
   }
+
+  /* Slider: käytetään flex-scroll mobiilissa */
   .slider-wrapper .image-list {
     display: flex;
     overflow-x: auto;
@@ -637,33 +647,57 @@ textarea:focus {
   .slider-wrapper .image-list .image-item {
     width: 200px;
     height: auto;
+    flex-shrink: 0;
     scroll-snap-align: start;
   }
   .slider-scrollbar {
-    display: none; /* Piilotetaan scrollbar mobiilissa */
+    display: none; /* piilotetaan scrollbar mobiilissa */
   }
 
-  .container {
-    max-width: 96%;
-    width: 96%;
+  /* Other works gallery */
+  .other-works-section .container {
+    display: flex;
+    justify-content: flex-start; /* vasemmalle */
+    padding: 80px 10px;
   }
-  .slider-wrapper .slide-button {
-    display: none !important; /* Piilotetaan napit */
+  .other-works-section .image-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding-bottom: 10px;
+  }
+  .other-works-section .image-list li {
+    flex: 0 0 auto;
+    width: 150px;
+    height: auto;
+  }
+  .other-works-section .image-list li img {
+    width: 100%;
+    height: auto;
   }
 
-
-
-
-
-
-
-
-
-
+  /* Popup */
+  #popup, #close-popup {
+    display: flex !important; /* popup toimii mobiilissa */
+    justify-content: center;
+    align-items: center;
+  }
+  .popup-img {
+    max-width: 90%;
+    max-height: 70%;
+  }
+  .popup-link {
+    top: 10px;
+    left: 10px;
+    padding: 5px 8px;
+    font-size: 12px;
+  }
 
   /* Contact Section */
   section.contact-section {
-    padding: 40px 20px;
+    padding: 40px 15px;
     height: auto;
     text-align: center;
     background-size: cover;
@@ -699,4 +733,6 @@ textarea:focus {
     padding: 20px 0;
   }
 
-} /* End media query */
+}
+
+/* End media query */
