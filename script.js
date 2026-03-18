@@ -65,6 +65,33 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
+
+
+
+        const updateButtons = () => {
+    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+    // Piilota vasen nappi alussa
+    if (slider.scrollLeft <= 0) {
+        prevButton.style.display = "none";
+    } else {
+        prevButton.style.display = "flex";
+    }
+
+    // Piilota oikea nappi lopussa
+    if (slider.scrollLeft >= maxScrollLeft - 1) {
+        nextButton.style.display = "none";
+    } else {
+        nextButton.style.display = "flex";
+    }
+};
+
+// Päivitä scrollatessa
+slider.addEventListener("scroll", updateButtons);
+
+// Aseta oikea tila heti alussa
+updateButtons();
+
         prevButton.addEventListener("click", () => slider.scrollLeft -= scrollStep);
         nextButton.addEventListener("click", () => slider.scrollLeft += scrollStep);
     }
